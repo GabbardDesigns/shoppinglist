@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Shopping List</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1 id="myHeading">What I Need from the Store</h1>
+    <p>A simple shopping list to practice DOM behavior.</p>
+
+   
+    <p>
+      <input type="text" class="addItemInput" />
+      <button class="addItemButton" onclick="addNewItem(groceryListUl)">Add to Grocery List</button>
+      <button class="addItemButton" onclick="addNewItem(electListUl)">Add to Electronics List</button>
+    </p>
+
+    <div class="groceryList">
+      <p class="description">Grocery List  <button id="toggleList">Hide list</button></p>
+      <ul>
+        <li>Grapes</li>
+        <li>Milk</li>
+        <li>Oranges</li>
+        <li>Cherrios</li>
+      </ul>
+    </div>
+
+    <div class="electList">
+        <p class="description">Electronics List</p>
+        <ul>
+          <li>Keyboard</li>
+          <li>Mouse</li>
+          <li>TV</li>
+        </ul>
+      </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
