@@ -38,26 +38,35 @@ function attachListItemButtons(li){
  };
 
  groceryListUl.addEventListener('click', (event) => {
+  
+  
   if(event.target.tagName=='BUTTON'){
-    if (event.target.className=='remove'){
+  
     let child = event.target.parentNode;
+    let sibling = child.previousElementSibling;
     let parent =child.parentNode;
+  
+    if (event.target.className=='remove'){
     parent.removeChild(child);
     }
     else if(event.target.className=='up'){
-      let child = event.target.parentNode;
-      let sibling = child.previousElementSibling;
-      let parent =child.parentNode;
       if (sibling){
+       
+if (sibling==parent.firstElementChild){
+  sibling.lastElementChild.classList.remove('disabled');
+  child.lastElementChild.classList.add('disabled');
+  }
       parent.insertBefore(child,sibling);
     }
   }
     else if(event.target.className=='down'){
-      let child = event.target.parentNode;
-      let sibling = child.nextElementSibling;
-      let parent =child.parentNode;
+     
       if (sibling){
-      parent.insertBefore(sibling,child);
+        if (sibling==parent.lastElementChild){
+          sibling.lastElementChild.classList.remove('disabled');
+          child.lastElementChild.classList.add('disabled');
+          }
+        parent.insertBefore(sibling,child);
     }
  }
  }}); 
